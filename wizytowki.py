@@ -35,3 +35,19 @@ class BaseContact:
         for i in self.__data:
             if i.typ == "wizytówka":
                 print(i)
+
+class BussinessContact(BaseContact):
+    def __init__(self, company, firm, place, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+from abc import ABC, abstractmethod
+class przedmiot(ABC):
+    def __init__ (self, typ, priorytet):
+        self.typ = typ
+        self.priorytet = priorytet
+    @abstractmethod
+    def __str__(self):
+        pass
+
+    def __len__(self):
+        return len
