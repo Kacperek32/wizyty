@@ -51,3 +51,24 @@ class przedmiot(ABC):
 
     def __len__(self):
         return len
+
+class wizytówka(przedmiot):
+    
+    def __init__(self, imię, nazwisko, telefon, mail, priorytet, stanowisko, firma):
+        super().__init__("wizytówka", priorytet)
+        self.imię = imię
+        self.nazwisko = nazwisko
+        self.telefon = telefon
+        self.mail = mail
+        self.priorytet = priorytet
+        self.stanowisko = stanowisko
+        self.firma = firma
+
+    def __str__(self):
+        info = self.imię + self.nazwisko + "\n"
+        info += self.telefon + "\n"
+        info += self.mail + "\n"
+        info += self.priorytet + "\n"
+        info += self.stanowisko + "\n"
+        info += self.firma + "\n"
+        return  info
