@@ -37,11 +37,11 @@ class BaseContact:
                 print(i)
 
 class BussinessContact(BaseContact):
-    def __init__(self, company, firm, place, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
 from abc import ABC, abstractmethod
-class przedmiot(ABC):
+class thing(ABC):
     def __init__ (self, typ, priorytet):
         self.typ = typ
         self.priorytet = priorytet
@@ -52,7 +52,7 @@ class przedmiot(ABC):
     def __len__(self):
         return len
 
-class wizytówka(przedmiot):
+class wizytówka(thing):
     
     def __init__(self, imię, nazwisko, telefon, mail, priorytet, stanowisko, firma):
         super().__init__("wizytówka", priorytet)
@@ -72,3 +72,20 @@ class wizytówka(przedmiot):
         info += self.stanowisko + "\n"
         info += self.firma + "\n"
         return  info
+
+number_priv = [+4832123562]
+number_firm = [+4831232124]
+names = ("Janek ")
+
+baza = BaseContact()
+
+while True:
+
+    z = input()
+
+    print("(1) Dodać wizytówkę, (2) Wyświetlić wizytówki, (3) Dzwoń na prywatny, (4) Dzwoń na firmowy")
+    
+    if z == "1": baza.create_contacts()
+    if z == "2": baza.showwiz()
+    if z == "3": print(f"Wybieram number {number_priv} do {names}")
+    if z == "4": print(f"Wybieram numer {number_firm} do {names}")
